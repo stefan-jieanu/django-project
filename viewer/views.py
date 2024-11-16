@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from datetime import date
+from django.views import View
 
 # Create your views here.
 from django.http import HttpResponse
 
 from viewer.models import Movie, Genre
 from django.urls import resolve
-
 
 def home(request):
     movies = Movie.objects.all()

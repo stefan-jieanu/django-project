@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 from viewer.views import home, movie_detail, movie_genre
+from magazins.views import list_reviste, revista_detail, list_reviste_pub
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,9 @@ urlpatterns = [
     # Url encoding
     path('', home, name='home'),
     path('movie/<slug:slug>', movie_detail, name='movie_detail'),
-    path('gen/<str:genre_name>', movie_genre, name='movie_genre')
+    path('gen/<str:genre_name>', movie_genre, name='movie_genre'),
+
+    path('reviste/', list_reviste, name='list_reviste'),
+    path('reviste_detalii/<slug:slug>', revista_detail, name='revista_detail'),
+    path('reviste/<str:pub_name>', list_reviste_pub, name='list_reviste_pub'),
 ]
